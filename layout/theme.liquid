@@ -10,11 +10,21 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
-
+  {% comment %}
+  Add Bulma library to Theme
+  {% endcomment %}
   {{ '//cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css' | stylesheet_tag }}
+  
+  {% comment %} 
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {% endcomment %}
 </head>
 <body>
-
+  <h1>
+    {{ settings.coding_test }}
+  </h1>
+  {% section 'collection' %}
   {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handleize %}
     {% if linklists[child_list_handle].links != blank %}
@@ -42,5 +52,8 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
+  <script>
+    console.log('{{ settings.coding_test }}');
+  </script>
 </body>
 </html>

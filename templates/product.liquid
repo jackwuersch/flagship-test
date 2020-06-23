@@ -25,7 +25,23 @@
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
   <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+  
+  {% comment %} 
+    Logic to handle button behaviour
+  {% endcomment %}
+  {% if current_stock_available >= 5 %}
+    {% assign button-text = 'Add To Cart' %}
+  {% elsif current_stock_available == 0 %}
+    {% assign button-text = 'No Stock' %}
+    {% assign button-status = 'disabled' %}
+    {% assign availablity = 'no' %}
+  {% else %}
+    {% assign button-text = 'Low Stock' %}
+  {% endif %}
+
+  <button type="submit" name="add" id="AddToCart" class="{{availablity}}-stock" onclick="addToCart(); return false;" {{button-status}}>
+    {{button-text}}
+  </button>
 </form>
 <div>{{ product.description }}</div>
 
