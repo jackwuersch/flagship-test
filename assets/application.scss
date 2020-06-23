@@ -1,1 +1,10 @@
 // put your styles here
+#AddToCart {
+  background-color: green;
+  &:hover {
+    background-color: blue;
+  }
+}
+#AddToCart.no-stock {
+  background-color: grey;
+}

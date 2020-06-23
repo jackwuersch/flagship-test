@@ -1,6 +1,7 @@
 // Put your applicaiton javascript here
 
-// Should
+// Move this logic to another JS file?
+
 /*
 Ajax Add to cart function, vanilla Javascript option
 */
@@ -32,7 +33,7 @@ async function addToCart() {
   }
 }
 /**
- jQuery alternative. Uncomment jQuery loading scripts in theme.liquid.
+ jQuery alternative. jQuery loading scripts in theme.liquid also commented 
 
  function addToCart() {
    jQuery.post("/cart/add.js", $('form[action="/cart/add"]').serialize());
