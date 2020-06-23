@@ -1,5 +1,6 @@
 // Put your applicaiton javascript here
 
+// Should
 /*
 Ajax Add to cart function, vanilla Javascript option
 */
@@ -30,3 +31,10 @@ async function addToCart() {
     alert(data.description);
   }
 }
+/**
+ jQuery alternative. Uncomment jQuery loading scripts in theme.liquid.
+
+ function addToCart() {
+   jQuery.post("/cart/add.js", $('form[action="/cart/add"]').serialize());
+ }
+ */
