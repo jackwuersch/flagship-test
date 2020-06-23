@@ -10,6 +10,15 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+{% comment %}   JQuery Option {% endcomment %}
+  {% comment %} {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  <script>
+    function addToCart() {
+      jQuery.post('/cart/add.js', $('form[action="/cart/add"]').serialize())
+    }
+  </script>  {% endcomment %}
 </head>
 <body>
 

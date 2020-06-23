@@ -1,7 +1,7 @@
 // Put your applicaiton javascript here
 
 /*
-Ajax Add to cart function, vanilla Javascript
+Ajax Add to cart function, vanilla Javascript option
 */
 async function addToCart() {
   //Get quantity and variantId of product
