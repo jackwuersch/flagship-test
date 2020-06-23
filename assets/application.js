@@ -1,5 +1,4 @@
 // Put your applicaiton javascript here
-
 // Move this logic to another JS file?
 
 /*
@@ -39,3 +38,8 @@ async function addToCart() {
    jQuery.post("/cart/add.js", $('form[action="/cart/add"]').serialize());
  }
  */
+
+const closeModal = () => {
+  const modal = document.querySelector(".modal");
+  modal.classList.remove("is-active");
+};
