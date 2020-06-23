@@ -16,7 +16,10 @@
   {% endcomment %}
 </head>
 <body>
-
+  <h1>
+    {{ settings.coding_test }}
+  </h1>
+  {% section 'collection' %}
   {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handleize %}
     {% if linklists[child_list_handle].links != blank %}
@@ -44,5 +47,8 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
+  <script>
+    console.log('{{ settings.coding_test }}');
+  </script>
 </body>
 </html>
