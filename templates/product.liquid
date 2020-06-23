@@ -24,6 +24,6 @@
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
   <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+  <button type="submit" name="add" id="AddToCart" onclick="addToCart(); return false;">Add Item</button>
 </form>
 <div>{{ product.description }}</div>
