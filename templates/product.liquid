@@ -33,15 +33,24 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Coding Test Modal</p>
+      <p class="modal-card-title">        
+        {% for variant in product.variants %}
+          {{ product.title}} | Availability: {{current_stock_available}}x in stock
+        {% endfor %}
+      </p>
       <button onclick="closeModal()" class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <p>
-        {% for variant in product.variants %}
-          {{ product.title }} - {{current_stock_available}} items in stock.
-        {% endfor %}
+      <p class="modal-card-title">
+        Your Cart  :       
+        <ul>
+          {% for item in cart.items %}
+            <li>{{ item.title }} x {{ item.quantity }}</li>
+          {% endfor %}
+        </ul>
+        Total: {{ cart.total_price | money }}
       </p>
+
     </section>
   </div>
 </div>
