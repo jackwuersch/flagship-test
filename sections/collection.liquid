@@ -1,5 +1,7 @@
-{% for collection in collections %}
-  <a href="{{ collection.url }}?sort_by=title-ascending">Collection - {{ collection.title }}</a>
+{% assign sorted_collection = collection.sort_by | default: "title-ascending"  %}
+ | sort:'title' %}
+{% for sorted_collection in collections %}
+  <a href="{{ collection.url }}">Collection - {{ collection.title }}</a>
 {% endfor %}
 
 {% schema %}
